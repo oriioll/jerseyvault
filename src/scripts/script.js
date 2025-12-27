@@ -18,6 +18,9 @@ const getJerseys = async function(teamId) {
 
         console.log(`👕 HAS CARGADO ${camisetas.length} EQUIPACIONES`);
         console.log(camisetas);
+        camisetas.forEach(element => {
+            renderCards(element.strSeason, element.strEquipment, element.strType);
+        });
 
 
     } catch (error) {
@@ -26,4 +29,19 @@ const getJerseys = async function(teamId) {
 }
 
 
-getJerseys(133604);
+getJerseys(133731);
+
+function renderCards(season, urlImage, type) {
+    const section = document.getElementById('jerseys');
+    const card = document.createElement('article');
+    card.classList = "jerseyCard";
+    card.innerHTML = 
+    `
+    <img src="${urlImage}" alt="JerseyImage">
+        <div class="textInfo">
+          <p>${season}</p>
+          <p id="type">${type}</p>
+        </div>
+    `;
+    section.appendChild(card);
+}

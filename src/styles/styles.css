@@ -30,11 +30,12 @@ body {
   background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  gap: 20px;
 }
 
 header {
-  background-color: var(--accent-color);
+  background-color: var(--bg-color);
   width: 100%;
   height: 15vh;
   display: flex;
@@ -48,23 +49,82 @@ header {
 h1 {
   font-family: "Quizlo", sans-serif;
   font-weight: 400;
-  color: var(--bg-color);
+  color: var(--accent-color);
   font-size: 3rem;
 }
 
 main {
   min-height: 75dvh;
+  width: 100%;
+  gap: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-footer {
+  justify-content: space-around;
   background-color: var(--accent-color);
+}
+
+main .teamLogosCarroussel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main .jerseys {
+  width: 100%;
+  display: grid;
+  padding: 50px;
+  background-color: var(--accent-color);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.jerseys article {
+  width: auto;
+  height: 340px;
+  color: var(--accent-color);
+  background-color: var(--bg-color);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
+  transition: .17s ease-out;
+}
+
+.jerseys article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.65);
+}
+
+article p {
+  color: var(--accent-color);
+}
+.jerseys article img {
+  width: 100%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.jerseys article .textInfo {
+  display: flex;
+  color: var(--bg-color);
+  justify-content: space-around;
+}
+
+#type {
+  color: var(--text-color);
+}
+
+footer {
+  background-color: var(--bg-color);
   color: var(--text-color);
   width: 100%;
   height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   text-align: left;
@@ -74,7 +134,7 @@ footer {
 
 footer a {
   position: relative;
-  color: var(--bg-color);
+  color: var(--accent-color);
   display: inline-block;
   text-decoration: none;
   transition: all 1.3s ease-out;
@@ -96,6 +156,3 @@ footer a:hover::after {
 }
 
 
-footer p {
-  width: 20%;
-}
